@@ -4,3 +4,9 @@
 Testing URLs:
 
 http://127.0.0.1:8071/
+
+## Unit test
+cd docker-compose-flask-math
+
+python -m pytest
+
