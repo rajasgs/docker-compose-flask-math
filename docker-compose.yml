@@ -1,4 +1,4 @@
-express_sample:
+docker_compose_flask_math:
   build: .
   command: python app.py
   volumes:
