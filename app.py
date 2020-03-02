@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask_restful import Resource, Api
 from sqlalchemy import create_engine
 from json import dumps
@@ -32,7 +32,11 @@ def reverse_string_api():
 
     r_content = su.reverse_string(content)
 
-    return r_content
+    result = {
+        'content' : r_content
+    }
+
+    return jsonify(result) 
 
 if __name__ == '__main__':
     app.run( host='0.0.0.0', port=8071, debug=True)
