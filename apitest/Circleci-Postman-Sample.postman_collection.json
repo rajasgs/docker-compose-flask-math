@@ -45,6 +45,40 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Base API",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ae49af7b-11f1-4237-8163-af92b1548511",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8071/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8071",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
