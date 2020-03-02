@@ -1,5 +1,5 @@
 # Use the LTS release.
-FROM python:3.6
+FROM python:3.6-stretch
 
 RUN useradd --user-group --create-home --shell /bin/false app 
   

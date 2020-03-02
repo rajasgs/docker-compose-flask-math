@@ -3,6 +3,9 @@ from flask_restful import Resource, Api
 from sqlalchemy import create_engine
 from json import dumps
 
+# Local import
+import string_util as su
+
 
 app = Flask(__name__)
 api = Api(app)
@@ -16,21 +19,20 @@ def main():
 	return "Welcome"
 
 '''
-    http://localhost:8071/add
+    http://localhost:8071/reverse
 
-    http://localhost:8071/add?a=2&b=3
+    http://localhost:8071/reverse?content=hello
 '''
-@app.route("/add")
-def add_api():
+@app.route("/reverse")
+def reverse_string_api():
 
-    a = int(request.args.get('a'))
-    b = int(request.args.get('b'))
+    content = request.values.get('content')
 
-    c = a + b
+    print('c : ', content)
 
-    print('c : ', c)
+    r_content = su.reverse_string(content)
 
-    return c
+    return r_content
 
 if __name__ == '__main__':
     app.run( host='0.0.0.0', port=8071, debug=True)
