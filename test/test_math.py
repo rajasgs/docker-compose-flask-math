@@ -42,4 +42,4 @@ def test_math_subtract_3():
     a = 45
     b = 1
 
-    assert math_util.subtract(a, b) == 4
+    assert math_util.subtract(a, b) == 44
