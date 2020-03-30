@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from flask_restful import Resource, Api
 from sqlalchemy import create_engine
 from json import dumps
+import os
 
 # Local import
 import string_util as su
@@ -17,6 +18,21 @@ api = Api(app)
 @app.route("/")
 def main():
 	return "Welcome"
+
+
+'''
+    http://localhost:8071/env
+'''
+@app.route("/env")
+def show_env():
+
+    env = int(os.environ.get('WORKER_SMTP_PORT', '28'))
+
+    result = {
+        'env' : env
+    }
+
+    return jsonify(result) 
 
 '''
     http://localhost:8071/reverse
