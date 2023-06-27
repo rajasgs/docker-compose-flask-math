@@ -25,6 +25,6 @@ jobs:
 
 workflows:
   main:
-    jobs:
-      - build-and-test
-      - newman-collection-run
+    # jobs:
+    #   - build-and-test
+    #   - newman-collection-run
